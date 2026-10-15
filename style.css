@@ -1,0 +1,43 @@
+*{box-sizing:border-box;margin:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#f1f5f9;color:#1e293b;display:flex;min-height:100vh}
+.sidebar{width:230px;background:#0b4a99;color:#fff;padding:24px 16px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.logo{font-size:22px;font-weight:700;margin-bottom:28px}
+.logo span{color:#7dd3fc}
+nav{display:flex;flex-direction:column;gap:8px;flex:1}
+.nav{background:none;border:0;color:#dbeafe;text-align:left;font:inherit;font-size:15px;padding:12px 14px;border-radius:8px;cursor:pointer}
+.nav:hover{background:#1558ad}
+.nav.active{background:#0e86d4;color:#fff;font-weight:700}
+.nav:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+.foot{font-size:13px;color:#bfdbfe;line-height:1.6}
+main{flex:1;padding:28px;min-width:0}
+.view{display:none}.view.active{display:block}
+h1{font-size:28px;color:#0f3d75}
+.sub{color:#64748b;margin:4px 0 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px}
+.card{background:#fff;border-radius:10px;padding:16px;border-left:5px solid #0e86d4}
+.card.profit{border-left-color:#16a34a}
+.card small{color:#64748b;font-size:13px}
+.card b{display:block;font-size:26px;margin:6px 0 4px;color:#0f3d75}
+.card em{font-style:normal;font-size:12px;color:#64748b}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.panel{background:#fff;border-radius:10px;padding:16px;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel h2{font-size:16px;margin-bottom:10px;color:#0f3d75}
+.box{position:relative;height:280px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+.filters input,.filters select{padding:10px 12px;border:1px solid #cbd5e1;border-radius:8px;font:inherit;background:#fff;min-width:150px}
+.count{font-size:13px;color:#64748b;margin-bottom:8px}
+.tablewrap{background:#fff;border-radius:10px;overflow:auto;max-height:65vh}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:9px 12px;text-align:left;white-space:nowrap;border-bottom:1px solid #e2e8f0}
+th{position:sticky;top:0;background:#0b4a99;color:#fff}
+td:last-child,th:last-child{text-align:right}
+@media(max-width:800px){
+  body{flex-direction:column}
+  .sidebar{width:100%;height:auto;position:static;padding:14px}
+  .logo{margin-bottom:10px}
+  nav{flex-direction:row;overflow-x:auto}
+  .foot{display:none}
+  main{padding:16px}
+  .grid{grid-template-columns:1fr}
+}

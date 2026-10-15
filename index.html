@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Sales &amp; Price Analysis</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="logo">Auto<span>Analytics</span></div>
+  <nav>
+    <button class="nav active" data-view="dashboard">Dashboard</button>
+    <button class="nav" data-view="sales">Car Sales</button>
+    <button class="nav" data-view="price">Price Analysis</button>
+  </nav>
+  <div class="foot"><b>Car Sales Project</b><br>Sales &amp; Price Analysis</div>
+</aside>
+
+<main>
+  <section id="dashboard" class="view active">
+    <h1>Car Sales Dashboard</h1>
+    <p class="sub">Explore car sales, prices and market trends.</p>
+    <div class="cards" id="kpis"></div>
+    <div class="grid">
+      <div class="panel"><h2>Cars sold by brand</h2><div class="box"><canvas id="cBrand"></canvas></div></div>
+      <div class="panel"><h2>Fuel type share</h2><div class="box"><canvas id="cFuel"></canvas></div></div>
+      <div class="panel wide"><h2>Monthly sales value</h2><div class="box"><canvas id="cMonth"></canvas></div></div>
+    </div>
+  </section>
+
+  <section id="sales" class="view">
+    <h1>Car Sales</h1>
+    <p class="sub">Search and filter all car records.</p>
+    <div class="filters">
+      <input id="q" type="search" placeholder="Search brand or model">
+      <select id="fBrand"></select>
+      <select id="fCity"></select>
+      <select id="fFuel"></select>
+    </div>
+    <p class="count" id="count"></p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>ID</th><th>Brand</th><th>Model</th><th>Year</th><th>KM</th><th>Fuel</th><th>Gear</th><th>Owner</th><th>City</th><th>Sale date</th><th>Price</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="price" class="view">
+    <h1>Price Analysis</h1>
+    <p class="sub">What drives the price of a used car.</p>
+    <div class="grid">
+      <div class="panel"><h2>Average price by car age</h2><div class="box"><canvas id="pYear"></canvas></div></div>
+      <div class="panel"><h2>Average price by fuel type</h2><div class="box"><canvas id="pFuel"></canvas></div></div>
+      <div class="panel"><h2>Average price by city</h2><div class="box"><canvas id="pCity"></canvas></div></div>
+      <div class="panel"><h2>KM driven vs price</h2><div class="box"><canvas id="pKm"></canvas></div></div>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
